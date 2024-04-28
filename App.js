@@ -1,20 +1,23 @@
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { View } from 'react-native';
+import MobileTabNavigator from './App/Navbar/NavMobile'
+
+import Onboarding from './App/shared/components/screens/(auth)/Onboarding'
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Onboarding>
+     <View style={{ flex: 1, backgroundColor: 'white' }}>
+    <NavigationContainer>
+    <StatusBar style="auto" />
+        <MobileTabNavigator />
+
+      </NavigationContainer>
+      </View>
+      
+      </Onboarding>
+
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
